@@ -17,5 +17,9 @@ jobs:
         uses: ./
         with:
           version: 0.9.9
-      - name: Print
+      - name: Print Environment Variables
+        run: |
+          echo "$PIERROT_TOKEN"
+          echo "$PIERROT_ORGANIZATION"
+      - name: Print Pierrot Version
         run: pierrot --version
