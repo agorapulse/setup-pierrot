@@ -125,7 +125,8 @@ function unzipPierrotDownload(repoRoot, version, destinationFolder) {
                     core.info(file);
                 }
             });
-            return path.join(destinationFolder, `pierrot-${platform}-amd64-v${version}`);
+            const platformPart = platform === 'windows' ? 'win' : platform;
+            return path.join(destinationFolder, `pierrot-${platformPart}-amd64-v${version}`);
         }
         else {
             throw new Error(`Unzip argument ${pierrotFile} is not a file`);
