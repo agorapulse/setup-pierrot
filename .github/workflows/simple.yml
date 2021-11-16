@@ -6,8 +6,10 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Setup Pierrot
-        uses: ./.
+        uses: ./
         with:
           version: 0.9.9
       - name: Print
