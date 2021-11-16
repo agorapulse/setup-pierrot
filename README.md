@@ -1,6 +1,8 @@
 # Setup Pierrot Action
 
-This action sets up Pierrot CLI for using in GitHub Actions.
+<img src="https://agorapulse.github.io/pierrot/images/pierrot.png" alt="drawing" style="width:200px;height:200px"/>
+
+This action sets up [Pierrot CLI](https://agorapulse.github.io/pierrot/) for using in GitHub Actions.
 
 * It downloads (if it is not cached yet) required version of Pierrot CLI
 * Adds `pierrot` executable to the environment
