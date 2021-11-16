@@ -120,11 +120,6 @@ function unzipPierrotDownload(repoRoot, version, destinationFolder) {
         const stats = fs.statSync(pierrotFile);
         if (stats.isFile()) {
             yield extractFiles(pierrotFile, destinationFolder);
-            fs.readdir(destinationFolder, (err, files) => {
-                for (const file of files) {
-                    core.info(file);
-                }
-            });
             const platformPart = platform === 'windows' ? 'win' : platform;
             return path.join(destinationFolder, `pierrot-${platformPart}-amd64-v${version}`);
         }

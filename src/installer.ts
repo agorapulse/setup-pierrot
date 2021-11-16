@@ -107,12 +107,6 @@ async function unzipPierrotDownload(
   if (stats.isFile()) {
     await extractFiles(pierrotFile, destinationFolder)
 
-    fs.readdir(destinationFolder, (err, files) => {
-      for (const file of files) {
-        core.info(file)
-      }
-    })
-
     const platformPart = platform === 'windows' ? 'win' : platform
 
     return path.join(
