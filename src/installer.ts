@@ -52,7 +52,7 @@ export async function getPierrot(version: string): Promise<void> {
       `temp_${Math.floor(Math.random() * 2000000000)}`
     )
 
-    const pierrotDir = await unzipPierrotDownload(pierrotFile, tempDir)
+    const pierrotDir = await unzipPierrotDownload(pierrotFile, version, tempDir)
 
     core.debug(`pierrot extracted to ${pierrotDir}`)
 
@@ -79,6 +79,7 @@ async function extractFiles(
 
 async function unzipPierrotDownload(
   repoRoot: string,
+  version: string,
   destinationFolder: string
 ): Promise<string> {
   await io.mkdirP(destinationFolder)
@@ -89,13 +90,7 @@ async function unzipPierrotDownload(
   if (stats.isFile()) {
     await extractFiles(pierrotFile, destinationFolder)
 
-    fs.readdir(destinationFolder, (err, files) => {
-      for (const file of files) {
-        core.info(file)
-      }
-    })
-
-    return destinationFolder
+    return path.join(destinationFolder, `pierrot-${platform}-amd64-v${version}`)
   } else {
     throw new Error(`Unzip argument ${pierrotFile} is not a file`)
   }
