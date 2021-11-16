@@ -19,7 +19,7 @@ jobs:
           version: 0.9.9
       - name: Print Environment Variables
         run: |
-          echo "$PIERROT_TOKEN"
-          echo "$PIERROT_ORGANIZATION"
+          echo "PIERROT_TOKEN=$PIERROT_TOKEN"
+          echo "PIERROT_ORGANIZATION=$PIERROT_ORGANIZATION"
       - name: Print Pierrot Version
         run: pierrot --version
