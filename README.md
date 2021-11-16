@@ -1,8 +1,8 @@
-# setup-graalvm
+# Setup Pierrot Action
 
-This action sets up GraalVM environment for using in GitHub Actions.
+This action sets up Pierrot CLI for using in GitHub Actions.
 
-* It downloads (if it is not cached yet) required version of GraalVM Community edition
+* It downloads (if it is not cached yet) required version of Pierrot CLI
 * Adds executors provided by GraalVM distribution to the environment
 * Register problem matchers for error output
 

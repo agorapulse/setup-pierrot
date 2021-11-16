@@ -1,9 +1,9 @@
 {
-  "name": "setup-graalvm",
+  "name": "setup-pierrot",
   "version": "1.0.0",
   "private": true,
-  "description": "setup graalvm action",
-  "main": "lib/setup-graalvm.js",
+  "description": "setup pierrot action",
+  "main": "lib/setup-pierrot.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeLaGuardo/setup-graalvm.git"
+    "url": "git+https://github.com/agorapulse/setup-pierrot.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "DeLaGuardo",
+  "author": "musketyr",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",

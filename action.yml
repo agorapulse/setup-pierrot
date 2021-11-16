@@ -1,23 +1,14 @@
-name: 'Setup GraalVM environment'
-description: 'Setup your runner with GraalVM'
-author: 'DeLaGuardo'
+name: 'Setup Pierrot CLI'
+description: 'Setup your runner with Pierrot CLI'
+author: 'musketyr'
 branding:
-  icon: 'gift'
-  color: 'blue'
+  icon: 'git-pull-request'
+  color: 'white'
 inputs:
-  graalvm-version:
-    description: '(deparecated) The GraalVM version to make available on the path.'
-  graalvm:
-    description: 'The GraalVM version, defaults to 21.0.0.2'
-    default: '21.0.0.2'
-  java:
-    description: 'The Java version GraalVM is based on, defaults to java8'
-    default: 'java8'
-  arch:
-    description: 'The desired architecture. Options are - "amd64" (default), and "aarch64" (for linux only)'
-    default: 'amd64'
-  personal-token:
-    description: 'https://docs.github.com/en/actions/security-guides/automatic-token-authentication'
+  version:
+    description: 'The version of Pierrot CLI'
+    required: true
+    default: '0.9.9'
 runs:
   using: 'node12'
   main: 'dist/index.js'
