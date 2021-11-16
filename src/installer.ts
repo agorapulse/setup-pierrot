@@ -90,10 +90,10 @@ async function unzipPierrotDownload(
     await extractFiles(pierrotFile, destinationFolder)
 
     fs.readdir(destinationFolder, (err, files) => {
-      files.forEach(file => {
-        core.info(file);
-      });
-    });
+      for (const file of files) {
+        core.info(file)
+      }
+    })
 
     return destinationFolder
   } else {
