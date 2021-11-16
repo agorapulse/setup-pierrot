@@ -88,6 +88,13 @@ async function unzipPierrotDownload(
 
   if (stats.isFile()) {
     await extractFiles(pierrotFile, destinationFolder)
+
+    fs.readdir(destinationFolder, (err, files) => {
+      files.forEach(file => {
+        core.info(file);
+      });
+    });
+
     return destinationFolder
   } else {
     throw new Error(`Unzip argument ${pierrotFile} is not a file`)
