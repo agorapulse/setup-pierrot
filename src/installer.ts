@@ -35,7 +35,11 @@ if (IS_WINDOWS) {
   }
 }
 
-export async function getPierrot(version: string): Promise<void> {
+export async function getPierrot(
+  version: string,
+  token: string,
+  organization: string
+): Promise<void> {
   let toolPath = tc.find(PIERROT, version)
 
   if (toolPath) {
@@ -60,6 +64,19 @@ export async function getPierrot(version: string): Promise<void> {
   }
 
   core.addPath(path.join(toolPath, 'bin'))
+
+  if (!organization) {
+    const repository = process.env['GITHUB_REPOSITORY'] || '/'
+    organization = repository.split('/')[0]
+  }
+
+  if (organization) {
+    core.exportVariable('PIERROT_ORGANIZATION', organization)
+  }
+
+  if (token) {
+    core.exportVariable('PIERROT_TOKEN', token)
+  }
 }
 
 async function extractFiles(
@@ -89,6 +106,12 @@ async function unzipPierrotDownload(
 
   if (stats.isFile()) {
     await extractFiles(pierrotFile, destinationFolder)
+
+    fs.readdir(destinationFolder, (err, files) => {
+      for (const file of files) {
+        core.info(file)
+      }
+    })
 
     return path.join(destinationFolder, `pierrot-${platform}-amd64-v${version}`)
   } else {
