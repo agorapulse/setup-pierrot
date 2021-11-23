@@ -24,7 +24,7 @@ steps:
     # The GitHub organization to limit the searches, set to the owning organization if not provided
     # Can be bypassed by using --global flag
     organization: 'octocat'
-- run: java -version
+- run: pierrot --version
 ```
 # License
 
