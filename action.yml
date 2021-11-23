@@ -8,7 +8,7 @@ inputs:
   version:
     description: 'The version of Pierrot CLI'
     required: true
-    default: '0.9.10'
+    default: '0.9.11'
   token:
     description: 'The token to be used with the Pierrot CLI'
     required: false
