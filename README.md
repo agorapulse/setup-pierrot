@@ -17,7 +17,7 @@ steps:
 - uses: agorapulse/setup-pierrot@master
   with:
     # Pierrot CLI version, default to the latest version
-    version: '0.9.14'
+    version: '1.0.0'
     # Optional personal GitHub token which should have access to repositories you want to modify
     # Can be specified later as the PIERROT_TOKEN environment variable or using --github-token option
     token: ${{ secrets.PERSONAL_TOKEN }}
