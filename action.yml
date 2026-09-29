@@ -16,5 +16,5 @@ inputs:
     description: 'The organization to be used with the Pierrot CLI'
     required: false
 runs:
-  using: 'node12'
+  using: 'node24'
   main: 'dist/index.js'
